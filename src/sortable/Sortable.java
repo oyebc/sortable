@@ -150,9 +150,9 @@ public class Sortable {
 
         return score;
     }
-
+    
     private String sanitize(String dirtyString) {
         dirtyString = dirtyString.replaceAll("_", "").replaceAll("-", "").toLowerCase();
         return dirtyString.replaceAll("\\s", "");
-    }
+    }    
 }
