@@ -1,0 +1,66 @@
+{"product_name":"Canon","manufacturer":"Canon","model":"DSC-W310","family":"Camera","announced-date":"2010-01-06T19:00:00.000-05:00"}
+{"product_name":"Samsung_TL240","manufacturer":"Samsung","model":"TL240","announced-date":"2010-01-05T19:00:00.000-05:00"}
+{"product_name":"Nikon-s6100","manufacturer":"Nikon","model":"S6100","family":"Coolpix","announced-date":"2011-02-08T19:00:00.000-05:00"}
+{"product_name":"Samsung_TL220","manufacturer":"Samsung","model":"TL220","announced-date":"2009-08-12T20:00:00.000-04:00"}
+{"product_name":"Fujifilm-T205","manufacturer":"Fujifilm","model":"T205","family":"FinePix","announced-date":"2011-02-15T19:00:00.000-05:00"}
+{"product_name":"Casio_QV-5000SX","manufacturer":"Casio","model":"QV-5000SX","announced-date":"1998-04-19T20:00:00.000-04:00"}
+{"product_name":"Canon_Digital_IXUS_130_IS","manufacturer":"Canon","model":"130 IS","family":"Digital IXUS","announced-date":"2010-02-07T19:00:00.000-05:00"}
+{"product_name":"Leica_Digilux","manufacturer":"Leica","model":"Digilux","announced-date":"1998-09-15T20:00:00.000-04:00"}
+{"product_name":"Fujifilm_FinePix_1500","manufacturer":"Fujifilm","model":"1500","family":"FinePix","announced-date":"1999-05-17T20:00:00.000-04:00"}
+{"product_name":"Sony-HX100v","manufacturer":"Sony","model":"DSC-HX100v","family":"Cybershot","announced-date":"2011-02-01T19:00:00.000-05:00"}
+{"product_name":"Fujifilm-Z900EXR","manufacturer":"Fujifilm","model":"Z900EXR","family":"Finepix","announced-date":"2011-04-04T20:00:00.000-04:00"}
+{"product_name":"Olympus_mju_9010","manufacturer":"Olympus","model":"mju 9010","announced-date":"2010-01-06T19:00:00.000-05:00"}
+{"product_name":"Canon_PowerShot_SD980_IS","manufacturer":"Canon","model":"SD980 IS","family":"PowerShot","announced-date":"2009-08-18T20:00:00.000-04:00"}
+{"product_name":"Canon-IXUS-310HS","manufacturer":"Canon","model":"310 HS","family":"IXUS","announced-date":"2011-02-06T19:00:00.000-05:00"}
+{"product_name":"Casio_Exilim_EX-H20G","manufacturer":"Casio","model":"EX-H20g","family":"Exilim","announced-date":"2010-09-19T20:00:00.000-04:00"}
+{"product_name":"Olympus-T-110","manufacturer":"Olympus","model":"T110","announced-date":"2010-08-17T20:00:00.000-04:00"}
+{"product_name":"Kodak_EasyShare_M575","manufacturer":"Kodak","model":"M575","family":"EasyShare","announced-date":"2010-01-04T19:00:00.000-05:00"}
+{"product_name":"Toshiba_PDR-M60","manufacturer":"Toshiba","model":"PDR-M60","announced-date":"2000-02-02T19:00:00.000-05:00"}
+{"product_name":"Sony_Alpha_NEX-3","manufacturer":"Sony","model":"NEX-3","family":"Alpha","announced-date":"2010-05-10T20:00:00.000-04:00"}
+{"product_name":"Casio_Exilim_EX-Z29","manufacturer":"Casio","model":"EX-Z29","family":"Exilim","announced-date":"2009-03-02T19:00:00.000-05:00"}
+{"product_name":"Sony-TX10","manufacturer":"Sony","model":"TX10","family":"Cybershot","announced-date":"2011-02-15T19:00:00.000-05:00"}
+{"product_name":"Canon_Digital_IXUS_95_IS","manufacturer":"Canon","model":"95 IS","family":"Digital IXUS","announced-date":"2009-02-17T19:00:00.000-05:00"}
+{"product_name":"Fujifilm-AX305","manufacturer":"Fujifilm","model":"AX305","family":"FinePix","announced-date":"2011-02-15T19:00:00.000-05:00"}
+{"product_name":"Nikon_Coolpix_900S","manufacturer":"Nikon","model":"900S","family":"Coolpix","announced-date":"1998-10-25T19:00:00.000-05:00"}
+{"product_name":"Casio_Exilim_EX-FC100","manufacturer":"Casio","model":"EX-FC100","family":"Exilim","announced-date":"2009-01-07T19:00:00.000-05:00"}
+{"product_name":"Samsung_HZ15W","manufacturer":"Samsung","model":"HZ15W","announced-date":"2009-02-22T19:00:00.000-05:00"}
+{"product_name":"Sony_Cyber-shot_DSC-WX5","manufacturer":"Sony","model":"DSC-WX5","family":"Cyber-shot","announced-date":"2010-07-07T20:00:00.000-04:00"}
+{"product_name":"Agfa_ePhoto_1280","manufacturer":"Agfa","model":"1280","family":"ePhoto","announced-date":"1997-10-08T20:00:00.000-04:00"}
+{"product_name":"Fujifilm_FinePix_A170","manufacturer":"Fujifilm","model":"A170","family":"FinePix","announced-date":"2009-07-21T20:00:00.000-04:00"}
+{"product_name":"Casio_QV-5500SX","manufacturer":"Casio","model":"QV-5500SX","announced-date":"1999-07-19T20:00:00.000-04:00"}
+{"product_name":"Casio_Exilim_EX-Z2000","manufacturer":"Casio","model":"EX-Z2000","family":"Exilim","announced-date":"2010-01-05T19:00:00.000-05:00"}
+{"product_name":"Kodak_EasyShare_C140","manufacturer":"Kodak","model":"C140","family":"EasyShare","announced-date":"2009-01-07T19:00:00.000-05:00"}
+{"product_name":"Samsung_ST10","manufacturer":"Samsung","model":"ST10","announced-date":"2009-01-07T19:00:00.000-05:00"}
+{"product_name":"Casio_QV-2000UX","manufacturer":"Casio","model":"QV-2000UX","announced-date":"1999-07-19T20:00:00.000-04:00"}
+{"product_name":"Sony_Cyber-shot_DSC-S930","manufacturer":"Sony","model":"DSC-S930","family":"Cyber-shot","announced-date":"2009-01-07T19:00:00.000-05:00"}
+{"product_name":"Fujifilm_FinePix_S2500HD","manufacturer":"Fujifilm","model":"S2500HD","family":"FinePix","announced-date":"2010-02-01T19:00:00.000-05:00"}
+{"product_name":"Fujifilm-AX300","manufacturer":"Fujifilm","model":"AX300","family":"FinePix","announced-date":"2011-02-15T19:00:00.000-05:00"}
+{"product_name":"Canon_PowerShot_A5_Zoom","manufacturer":"Canon","model":"A5 Zoom","family":"PowerShot","announced-date":"1999-02-17T19:00:00.000-05:00"}
+{"product_name":"Panasonic_Lumix_DMC-FX580","manufacturer":"Panasonic","model":"DMC-FX580","family":"Lumix","announced-date":"2009-01-26T19:00:00.000-05:00"}
+{"product_name":"Samsung_PL100","manufacturer":"Samsung","model":"PL100","announced-date":"2010-01-05T19:00:00.000-05:00"}
+{"product_name":"Samsung-ES70","manufacturer":"Samsung","model":"ES70","announced-date":"2009-01-07T19:00:00.000-05:00"}
+{"product_name":"Fujifilm_FinePix_S1500","manufacturer":"Fujifilm","model":"S1500","family":"FinePix","announced-date":"2009-02-16T19:00:00.000-05:00"}
+{"product_name":"Nikon_Coolpix_L100","manufacturer":"Nikon","model":"L100","family":"Coolpix","announced-date":"2009-02-02T19:00:00.000-05:00"}
+{"product_name":"Casio_QV-7000SX","manufacturer":"Casio","model":"QV-7000SX","announced-date":"1998-08-17T20:00:00.000-04:00"}
+{"product_name":"Olympus_C-2500_L","manufacturer":"Olympus","model":"C-2500 L","announced-date":"1999-03-17T19:00:00.000-05:00"}
+{"product_name":"Olympus_FE-5010","manufacturer":"Olympus","model":"FE-5010","announced-date":"2009-01-06T19:00:00.000-05:00"}
+{"product_name":"Fujifilm_FinePix_4700_Zoom","manufacturer":"Fujifilm","model":"4700 Zoom","family":"FinePix","announced-date":"2000-01-30T19:00:00.000-05:00"}
+{"product_name":"Fujifilm_FinePix_A100","manufacturer":"Fujifilm","model":"A100","family":"FinePix","announced-date":"2009-02-03T19:00:00.000-05:00"}
+{"product_name":"Olympus_C-2000_Zoom","manufacturer":"Olympus","model":"C-2000 Zoom","announced-date":"1999-02-15T19:00:00.000-05:00"}
+{"product_name":"Olympus_mju_Tough_8010","manufacturer":"Olympus","model":"mju Tough 8010","announced-date":"2010-02-01T19:00:00.000-05:00"}
+{"product_name":"Canon_PowerShot_A5","manufacturer":"Canon","model":"A5","family":"PowerShot","announced-date":"1998-03-26T19:00:00.000-05:00"}
+{"product_name":"Casio_Exilim_EX-Z400","manufacturer":"Casio","model":"EX-Z400","family":"Exilim","announced-date":"2009-01-07T19:00:00.000-05:00"}
+{"product_name":"Casio_Exilim_EX-FC150","manufacturer":"Casio","model":"EX-FC150","family":"Exilim","announced-date":"2009-11-15T19:00:00.000-05:00"}
+{"product_name":"Panasonic-TZ20","manufacturer":"Panasonic","model":"DMC-TZ20","family":"Lumix","announced-date":"2011-01-24T19:00:00.000-05:00"}
+{"product_name":"Panasonic-DMC-S1","manufacturer":"Panasonic","model":"DMC-S1","family":"Lumix","announced-date":"2011-01-04T19:00:00.000-05:00"}
+{"product_name":"Canon_EOS_60D","manufacturer":"Canon","model":"60D","family":"EOS","announced-date":"2010-08-25T20:00:00.000-04:00"}
+{"product_name":"Epson_PhotoPC_700","manufacturer":"Epson","model":"700","family":"PhotoPC","announced-date":"1998-07-04T20:00:00.000-04:00"}
+{"product_name":"Casio-EX-ZR100","manufacturer":"Casio","model":"ZR100","family":"Exilim","announced-date":"2011-02-14T19:00:00.000-05:00"}
+{"product_name":"Pentax_Optio_WS80","manufacturer":"Pentax","model":"WS80","family":"Optio","announced-date":"2009-08-04T20:00:00.000-04:00"}
+{"product_name":"Samsung-PL51","manufacturer":"Samsung","model":"PL51","announced-date":"2010-01-19T19:00:00.000-05:00"}
+{"product_name":"Kodak_DC3400","manufacturer":"Kodak","model":"DC3400","announced-date":"2000-07-31T20:00:00.000-04:00"}
+{"product_name":"HP_Photosmart_C618","manufacturer":"HP","model":"C618","family":"Photosmart","announced-date":"2000-02-02T19:00:00.000-05:00"}
+{"product_name":"Casio_QV-2300UX","manufacturer":"Casio","model":"QV-2300UX","announced-date":"2000-06-21T20:00:00.000-04:00"}
+{"product_name":"Panasonic_Lumix_DMC-TZ8","manufacturer":"Panasonic","model":"DMC-TZ8","family":"Lumix","announced-date":"2010-01-25T19:00:00.000-05:00"}
+{"product_name":"Nikon-s4100","manufacturer":"Nikon","model":"S4100","family":"Coolpix","announced-date":"2011-02-08T19:00:00.000-05:00"}
+{"product_name":"Casio_QV-3000EX","manufacturer":"Casio","model":"QV-3000EX","announced-date":"2000-01-03T19:00:00.000-05:00"}

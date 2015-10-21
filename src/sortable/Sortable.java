@@ -15,6 +15,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,10 +26,18 @@ import java.util.logging.Logger;
  */
 public class Sortable {
 
-    private final double THRESHOLD = 60.0;
+    private final double THRESHOLD = 85.0;
 
     public static void main(String[] args) {
 
+//        String [] temp = new Sortable().sanitize("Canon PowerShot__D10 12.1 MP Waterproof Digital Camera with 3x Optical Image Stabilized Zoom and 2.5-inch LCD (Blue/Silver)");
+//            Gson gson1 = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX").create();
+//            Product  testProduct = gson1.fromJson("{\"product_name\":\"Canon\",\"manufacturer\":\"Canon\",\"model\":\"DSC-W310\",\"family\":\"Camera\",\"announced-date\":\"2010-01-06T19:00:00.000-05:00\"}", Product.class);
+//        
+//            Listing listing = gson1.fromJson("{\"title\":\"Canon PowerShot SX130IS 12.1 MP Digital Camera with 12x Wide Angle Optical Image Stabilized Zoom with 3.0-Inch LCD\",\"manufacturer\":\"Canon Canada\",\"currency\":\"CAD\",\"price\":\"199.96\"}", Listing.class);
+//        
+//            System.out.println(new Sortable().compare(testProduct, listing));
+//            System.exit(0);
         try {
             //open file that contains products data
             Sortable sortable = new Sortable();
@@ -92,11 +102,13 @@ public class Sortable {
                             //
                         } else {
                             //String unmatched = gsonList.toJson(curren)
+                            currentLineListing +="\n";
                             outputStream.write(currentLineListing.getBytes());
+                            //outputStream.write
                         }
-                        if (count2 == 2) {
-                            break;
-                        }
+//                        if (count2 == 2) {
+//                            break;
+//                        }
                     }
                     buffReaderListing.close();
                     instreamListing.close();
@@ -107,12 +119,13 @@ public class Sortable {
                      Listing [] listings = new Listing[matchedListings.size()];
                      listings = matchedListings.toArray(listings);
                      String result= gson.toJson(new Result(currentProduct.getProduct_name(),listings));
+                     result+="\n";
                      resultOutputStream.write(result.getBytes());
                      }
                      count++;
-                    if (count == 5) {
-                        break;
-                    }
+//                    if (count == 5) {
+//                        break;
+//                    }
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Sortable.class.getName()).log(Level.SEVERE, null, ex);
@@ -124,35 +137,81 @@ public class Sortable {
     }
 
     public double compare(Product product, Listing listing) {
+        
+        List<String> currentListingStringArray;
+        String[] currentProductStringArray;        
+        
+//        currentProductString = this.sanitize(product.getManufacturer());
+//        currentListingString = this.sanitize(listing.getManufacturer());
 
-        String currentProductString, currentListingString;
+        int totalNumOfWords=0, matchedWords=0, count=0;
+        currentListingStringArray = Arrays.asList(this.sanitize(listing.getManufacturer()));
+        currentProductStringArray = this.sanitize(product.getManufacturer());
+        
+        //int manufacturerScore = currentListingString.contains(currentProductString) || currentProductString.contains(currentListingString) ? 40 : 0;
 
-        currentProductString = this.sanitize(product.getManufacturer());
-        currentListingString = this.sanitize(listing.getManufacturer());
-
-        int manufacturerScore = currentListingString.contains(currentProductString) || currentProductString.contains(currentListingString) ? 40 : 0;
-
-        currentListingString = this.sanitize(listing.getTitle());
-        if (manufacturerScore == 0) {
-            manufacturerScore = currentListingString.contains(currentProductString) ? 40 : 0;
+        count = this.compareStringArrays(currentListingStringArray, currentProductStringArray);
+        
+        if(0<count)
+        {
+            matchedWords+=count;
+            totalNumOfWords+=currentProductStringArray.length;
+            currentListingStringArray = Arrays.asList(this.sanitize(listing.getTitle()));
         }
-        currentProductString = this.sanitize(product.getProduct_name());
+        else
+        {
+            currentListingStringArray = Arrays.asList(this.sanitize(listing.getTitle()));
+            count = this.compareStringArrays(currentListingStringArray, currentProductStringArray);
+            matchedWords+=count;
+            totalNumOfWords+=currentProductStringArray.length;
+            
+        }              
+        
+        currentProductStringArray = this.sanitize(product.getProduct_name());
+        count = this.compareStringArrays(currentListingStringArray, currentProductStringArray);
+        matchedWords+=count;
+        totalNumOfWords+=currentProductStringArray.length;
+        
+        
+        currentProductStringArray = this.sanitize(product.getModel());
+        count = this.compareStringArrays(currentListingStringArray, currentProductStringArray);
+        matchedWords+=count;
+        totalNumOfWords+=currentProductStringArray.length;
 
-        int productNameScore = currentListingString.contains(currentProductString) ? 20 : 0;
+        currentProductStringArray = this.sanitize(product.getFamily());
+        count = this.compareStringArrays(currentListingStringArray, currentProductStringArray);
+        matchedWords+=count;
+        totalNumOfWords+=currentProductStringArray.length;
 
-        currentProductString = this.sanitize(product.getModel());
-        int productModelScore = currentListingString.contains(currentProductString) ? 20 : 0;
-
-        currentProductString = this.sanitize(product.getFamily());
-        int productFamilyScore = currentListingString.contains(currentProductString) ? 20 : 0;
-        // return "";
-        double score = (manufacturerScore + productNameScore + productModelScore + productFamilyScore) * 1.0;
-
-        return score;
+        return (matchedWords*1.0/totalNumOfWords*1.0)*100;
     }
     
-    private String sanitize(String dirtyString) {
-        dirtyString = dirtyString.replaceAll("_", "").replaceAll("-", "").toLowerCase();
-        return dirtyString.replaceAll("\\s", "");
-    }    
+    public String[] sanitize(String dirtyString) {
+        //dirtyString = dirtyString.replaceAll("_", "").replaceAll("-", "").toLowerCase();
+        if(null==dirtyString)
+        {return new String []{""};} 
+        else {
+            dirtyString = dirtyString.toLowerCase();
+            String [] temp = dirtyString.split("-|\\s+|\\_");
+            return temp;
+        }
+    }  
+    
+    public int compareStringArrays(List<String> listingArray, String[] productArray)
+    {
+//        System.out.println(Arrays.toString(productArray));
+//        listingArray.stream().forEach((s) -> {
+//            System.out.println(s);
+//        });
+        int count=0;
+        for(String temp: productArray)
+        {
+            if(listingArray.contains(temp))
+            {count++;
+               // System.out.println(temp);
+            }
+        }
+        
+        return count;
+    }
 }
