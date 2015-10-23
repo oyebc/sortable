@@ -13,7 +13,7 @@ import java.util.Date;
  *
  * @author Oy
  */
-public class Product implements Serializable{
+public class Product{
     
     private String product_name;
     private String manufacturer;

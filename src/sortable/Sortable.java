@@ -26,7 +26,12 @@ import java.util.logging.Logger;
  */
 public class Sortable {
 
-    private final double THRESHOLD = 85.0;
+    private static final double THRESHOLD = 85.0;
+    private static final String WORKIN_DIR = "C:\\Users\\Oy\\Documents\\NetBeansProjects\\Sortable\\src\\res\\";
+    private static final String LISTINGS_TEMP_FILE = "listings_temp.txt";
+    private static final String LISTINGS_FILE = "listings.txt";
+    private static final String RESULT_FILE = "results.txt";
+    private static final String PRODUCTS_FILE = "products.txt";
 
     public static void main(String[] args) {
 
@@ -41,18 +46,26 @@ public class Sortable {
         try {
             //open file that contains products data
             Sortable sortable = new Sortable();
-            FileInputStream instream = new FileInputStream("C:\\Users\\Oy\\Documents\\NetBeansProjects\\Sortable\\src\\res\\products.txt");
+            FileInputStream instream = new FileInputStream(Sortable.WORKIN_DIR+Sortable.PRODUCTS_FILE);
             BufferedReader buffReader = new BufferedReader(new InputStreamReader(instream));
 
             String currentLine, currentLineListing;
             Product currentProduct;
             Listing currentListing;
-            Gson gson;
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX").create();
+            Gson gsonList = new GsonBuilder().setPrettyPrinting().create();
+            File listingInput, file;
+            ArrayList<Listing> matchedListings;
+            FileInputStream instreamListing;
+            BufferedReader buffReaderListing;
+            FileOutputStream outputStream;
+            double score;
+            String result;
 
             int count = 0;
             try {
                 //open file that will contain results
-                File resultFile = new File("C:\\Users\\Oy\\Documents\\NetBeansProjects\\Sortable\\src\\res\\results.txt");
+                File resultFile = new File(Sortable.WORKIN_DIR+Sortable.RESULT_FILE);
                 if (!resultFile.exists()) {
                     resultFile.createNewFile();
                 }
@@ -61,42 +74,42 @@ public class Sortable {
 
                 while ((currentLine = buffReader.readLine()) != null) {
 
-                    gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX").create();
+                   // gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX").create();
                     currentProduct = gson.fromJson(currentLine, Product.class);
-                    ArrayList<Listing> matchedListings = new ArrayList<>();
+                    matchedListings = new ArrayList<>();
                     
                     System.out.println("Product object: " + count);
                     System.out.println(currentProduct.toString());
                     System.out.println("******Listing objects*****");
-                    int count2 = 0;
+                    //int count2 = 0;
                     //TODO; check which file is smaller, listings.txt or listings_temp.txt, then the smaller is to be written to and the larger read from
-                    File listingInput, file;
+                   
                     
                     
                     if (count % 2 == 0) {
-                        listingInput = new File("C:\\Users\\Oy\\Documents\\NetBeansProjects\\Sortable\\src\\res\\listings.txt");
-                        file = new File("C:\\Users\\Oy\\Documents\\NetBeansProjects\\Sortable\\src\\res\\listings_temp.txt");
+                        listingInput = new File(Sortable.WORKIN_DIR+Sortable.LISTINGS_FILE);
+                        file = new File(Sortable.WORKIN_DIR+Sortable.LISTINGS_TEMP_FILE);
                         if (!file.exists())       file.createNewFile();
                     
                     } else {
-                        listingInput = new File("C:\\Users\\Oy\\Documents\\NetBeansProjects\\Sortable\\src\\res\\listings_temp.txt");
-                        file = new File("C:\\Users\\Oy\\Documents\\NetBeansProjects\\Sortable\\src\\res\\listings.txt");
+                        listingInput = new File(Sortable.WORKIN_DIR+Sortable.LISTINGS_TEMP_FILE);
+                        file = new File(Sortable.WORKIN_DIR+Sortable.LISTINGS_FILE);
                     }
-                    FileInputStream instreamListing = new FileInputStream(listingInput);
-                    BufferedReader buffReaderListing = new BufferedReader(new InputStreamReader(instreamListing));
+                    instreamListing = new FileInputStream(listingInput);
+                    buffReaderListing = new BufferedReader(new InputStreamReader(instreamListing));
 
                     
-                    FileOutputStream outputStream = new FileOutputStream(file);
+                    outputStream = new FileOutputStream(file);
 
                     while ((currentLineListing = buffReaderListing.readLine()) != null) {
-                        Gson gsonList = new GsonBuilder().setPrettyPrinting().create();
+                        
                         currentListing = gsonList.fromJson(currentLineListing, Listing.class);
-                        count2++;
+                        //count2++;
                         System.out.println(currentListing.toString());
 
-                        double score = sortable.compare(currentProduct, currentListing);
+                        score = sortable.compare(currentProduct, currentListing);
                         System.out.println("Score: "+score);
-                        if (score >= sortable.THRESHOLD) {
+                        if (score >= Sortable.THRESHOLD) {
                             matchedListings.add(currentListing);
                            // gsonList.toJson(new Result)
                             //
@@ -118,7 +131,7 @@ public class Sortable {
                      if(!matchedListings.isEmpty()){
                      Listing [] listings = new Listing[matchedListings.size()];
                      listings = matchedListings.toArray(listings);
-                     String result= gson.toJson(new Result(currentProduct.getProduct_name(),listings));
+                     result= gson.toJson(new Result(currentProduct.getProduct_name(),listings));
                      result+="\n";
                      resultOutputStream.write(result.getBytes());
                      }
